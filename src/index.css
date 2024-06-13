@@ -1,10 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #f9f9f9;
+    overflow-x: hidden; /* Ensure no horizontal overflow */
 }
 
 header {
@@ -12,6 +14,7 @@ header {
     color: white;
     text-align: center;
     padding: 1em 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .container {
@@ -21,9 +24,12 @@ header {
 
 .sidebar {
     width: 250px;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     padding: 1em;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
 }
 
 .sidebar ul {
@@ -39,6 +45,7 @@ header {
     color: #333;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 .sidebar ul li a:hover {
@@ -46,16 +53,22 @@ header {
 }
 
 .content {
-    flex: 1;
+    margin-left: 260px; /* Ensure content doesn't overlap with fixed sidebar */
     padding: 2em;
+    flex: 1;
 }
 
 .content section {
     margin-bottom: 2em;
+    background-color: #ffffff;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .content section h2 {
     color: #4CAF50;
+    margin-top: 0;
 }
 
 pre {
@@ -63,6 +76,10 @@ pre {
     padding: 1em;
     border: 1px solid #ddd;
     overflow-x: auto;
+    white-space: pre-wrap; /* Ensure preformatted text wraps */
+    word-wrap: break-word; /* Break long words in preformatted text */
+    border-radius: 4px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .responsive-image {
@@ -71,4 +88,18 @@ pre {
     height: auto;
     display: block;
     margin: 1em 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+    
+    .content {
+        margin-left: 0;
+    }
 }
