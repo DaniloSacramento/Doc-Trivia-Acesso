@@ -102,4 +102,39 @@ pre {
     .content {
         margin-left: 0;
     }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #4CAF50;
+        color: white;
+        padding: 1em;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .left-content {
+        display: flex;
+        align-items: center;
+    }
+    
+    .left-content img {
+        width: 40px; /* Ajuste o tamanho conforme necessário */
+        margin-right: 10px; /* Espaçamento entre o logo e o botão */
+    }
+    
+    .btn-contact {
+        background-color: #ffffff;
+        color: #4CAF50;
+        border: none;
+        padding: 0.5em 1em;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+    .btn-contact:hover {
+        background-color: #4CAF50;
+        color: white;
+    }
+    
 }
